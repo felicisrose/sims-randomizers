@@ -6,7 +6,7 @@
 <title>Sims Randomizer</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
+ 
   body {
     background: #ffffff;
     color: #37352f;
@@ -17,7 +17,7 @@
     flex-direction: column;
     gap: 16px;
   }
-
+ 
   .page-title {
     font-size: 13px;
     font-weight: 600;
@@ -25,13 +25,13 @@
     text-transform: uppercase;
     letter-spacing: 0.06em;
   }
-
+ 
   .cards {
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
   }
-
+ 
   .card {
     flex: 1;
     min-width: 200px;
@@ -42,7 +42,7 @@
     flex-direction: column;
     gap: 12px;
   }
-
+ 
   .card-title {
     font-size: 12px;
     font-weight: 600;
@@ -50,7 +50,7 @@
     text-transform: uppercase;
     letter-spacing: 0.06em;
   }
-
+ 
   .result-box {
     background: #ffffff;
     border: 1px solid #e9e9e7;
@@ -60,24 +60,24 @@
     align-items: center;
     justify-content: center;
   }
-
+ 
   .result-number {
     font-size: 2.8rem;
     font-weight: 700;
     color: #37352f;
   }
-
+ 
   .result-name {
     font-size: 1.4rem;
     font-weight: 500;
     color: #37352f;
   }
-
+ 
   .result-placeholder {
     font-size: 13px;
     color: #c7c6c2;
   }
-
+ 
   .btn {
     background: #37352f;
     color: #ffffff;
@@ -91,10 +91,10 @@
     transition: background 0.15s;
     width: 100%;
   }
-
+ 
   .btn:hover { background: #1a1915; }
   .btn:active { transform: scale(0.99); }
-
+ 
   .range-row {
     display: flex;
     align-items: center;
@@ -102,7 +102,7 @@
     color: #9b9b9b;
     font-size: 12px;
   }
-
+ 
   .range-input {
     background: #ffffff;
     border: 1px solid #e9e9e7;
@@ -114,18 +114,18 @@
     width: 50px;
     text-align: center;
   }
-
+ 
   .range-input:focus {
     outline: none;
     border-color: #b9b9b7;
   }
-
+ 
   .tags {
     display: flex;
     gap: 6px;
     flex-wrap: wrap;
   }
-
+ 
   .tag {
     font-size: 12px;
     padding: 3px 8px;
@@ -137,18 +137,18 @@
     transition: all 0.15s;
     font-family: inherit;
   }
-
+ 
   .tag.active {
     background: #37352f;
     color: #ffffff;
     border-color: #37352f;
   }
-
+ 
   .tag:hover:not(.active) {
     border-color: #b9b9b7;
     color: #37352f;
   }
-
+ 
   .rolling .result-number,
   .rolling .result-name {
     opacity: 0.3;
@@ -156,11 +156,11 @@
 </style>
 </head>
 <body>
-
+ 
 <div class="page-title">Randomizers</div>
-
+ 
 <div class="cards">
-
+ 
   <div class="card" id="intCard">
     <div class="card-title">Integer Roll</div>
     <div class="range-row">
@@ -174,7 +174,7 @@
     </div>
     <button class="btn" onclick="rollInteger()">Roll</button>
   </div>
-
+ 
   <div class="card" id="nameCard">
     <div class="card-title">Name Generator</div>
     <div class="tags">
@@ -187,12 +187,12 @@
     </div>
     <button class="btn" onclick="generateName()">Generate</button>
   </div>
-
+ 
 </div>
-
+ 
 <script>
   let selectedGender = 'any';
-
+ 
   const femaleNames = [
     "Ada","Adeline","Agnes","Ailsa","Alma","Althea","Amabel","Amelia","Anastasia",
     "Annis","Arabella","Arleen","Arline","Audrey","Augusta","Aurelia","Avice",
@@ -254,13 +254,14 @@
     "Fionnbarra","Iain","Lachlan","Padraig","Seamus","Seoirse","Tadhg",
     "Alasdair","Angus","Brennan","Ciarán","Colm","Donal","Eoghan","Fionn",
     "Lorcan","Odhran","Oisín","Pádraig","Ruairí","Séan","Tiernan"
-
+  ];
+ 
   function setGender(g) {
     selectedGender = g;
     document.querySelectorAll('.tag').forEach(t => t.classList.remove('active'));
     document.getElementById('tag-' + g).classList.add('active');
   }
-
+ 
   function rollInteger() {
     const card = document.getElementById('intCard');
     const min = parseInt(document.getElementById('minVal').value) || 1;
@@ -276,7 +277,7 @@
       el.textContent = result;
     }, 200);
   }
-
+ 
   function generateName() {
     const card = document.getElementById('nameCard');
     const el = document.getElementById('nameResult');
