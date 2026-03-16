@@ -194,26 +194,66 @@
   let selectedGender = 'any';
 
   const femaleNames = [
-    "Amara","Briar","Callie","Delia","Elara","Fiona","Gemma","Hazel","Isla","Jade",
-    "Kaia","Lena","Mira","Nora","Olive","Petra","Quinn","Rosa","Sage","Tara",
-    "Uma","Vera","Wren","Xena","Yara","Zoe","Adira","Blythe","Cleo","Dani",
-    "Elise","Freya","Giselle","Hana","Imara","Juno","Kira","Luna","Mae","Nova",
-    "Opal","Piper","Remi","Selene","Thea","Ursa","Veda","Winona","Yuki","Zara",
-    "Alma","Cora","Ember","Fleur","Gwen","Ivy","Jessa","Lila","Maren","Nell",
-    "Orla","Poppy","Rae","Skye","Tess","Viv","Willa","Yasmin","Zelda","Aria",
-    "Bea","Clara","Demi","Elodie","Rue","Calla","Sable","Ingrid","Vesper","Mina"
+    "Ada","Adeline","Agnes","Ailsa","Alma","Althea","Amabel","Amelia","Anastasia",
+    "Annis","Arabella","Arleen","Arline","Audrey","Augusta","Aurelia","Avice",
+    "Beatrice","Bess","Bessie","Blanche","Bridget","Bryony","Callie","Camille",
+    "Carrie","Celia","Charity","Clara","Clarice","Clarissa","Clemency","Clementine",
+    "Cora","Cordelia","Corinna","Cornelia","Cressida","Damaris","Deborah","Della",
+    "Delphine","Dinah","Dolly","Dora","Doris","Dorothy","Dorothea","Dulcie",
+    "Easter","Edith","Effie","Eliza","Ellen","Elodie","Elspeth","Elvira","Emma",
+    "Esme","Estella","Esther","Eudora","Eulalia","Eunice","Eva","Evangeline",
+    "Eveline","Fanny","Felicity","Fidelia","Flora","Florence","Frances","Frederica",
+    "Geneva","Georgiana","Gertrude","Gillian","Grace","Greta","Griselda","Guinevere",
+    "Harriet","Hazel","Hester","Honor","Hope","Hortense","Ida","Imogen","Ines",
+    "Irene","Iris","Isabel","Isadora","Isolde","Jessamine","Jessie","Joanna",
+    "Josephine","Judith","Julia","Juliana","June","Kezia","Laura","Lavinia",
+    "Leah","Leonora","Letitia","Lilian","Lilias","Lily","Louisa","Loveday",
+    "Lucie","Lucinda","Lucy","Lydia","Mabel","Madeline","Magdalene","Margery",
+    "Marion","Marjorie","Martha","Matilda","Maud","Mercy","Millicent","Minerva",
+    "Miranda","Miriam","Molly","Myra","Myrtle","Nancy","Naomi","Nell","Nora",
+    "Octavia","Olive","Olivia","Opal","Orinthia","Patience","Penelope","Philippa",
+    "Phoebe","Phyllis","Prudence","Rosamond","Rosanna","Rose","Rowena","Ruth",
+    "Sabrina","Sally","Selina","Sibyl","Sidony","Sophronia","Stella","Susanna",
+    "Sylvia","Tabitha","Temperance","Theodora","Theodosia","Thirza","Thomasina",
+    "Tilda","Ursula","Verity","Victoria","Viola","Violet","Virginia","Vivienne",
+    "Winifred","Winsome","Zenobie","Zillah","Zipporah",
+    // Irish & Scottish additions
+    "Aileen","Brigid","Caoimhe","Clodagh","Deirdre","Eithne","Fionnuala","Grainne",
+    "Maeve","Niamh","Orla","Roisin","Siobhan","Sorcha","Una",
+    "Catriona","Elspet","Fiona","Ishbel","Kirsty","Morag","Rhona","Senga","Shona","Sine"
   ];
-
+ 
   const masculineNames = [
-    "Arlo","Beckett","Cael","Dax","Eli","Finn","Gray","Holt","Ivan","Jace",
-    "Kai","Levi","Milo","Nash","Owen","Pierce","Rex","Seth","Theo","Vance",
-    "West","Zane","Alaric","Bram","Cade","Dorian","Ezra","Felix","Hugo","Jasper",
-    "Knox","Lars","Matteo","Niall","Oscar","Penn","Rhys","Soren","Tate","Vito",
-    "Wade","Xavier","Zev","Adrian","Beau","Cole","Dean","Emre","Ford","Hale",
-    "Jules","Kael","Leon","Marc","Noel","Otto","Pax","Rafe","Stellan","Troy",
-    "Axel","Bo","Drake","Elio","Griffon","Igor","Wolf","Yusuf","Zion","Cian",
-    "Idris","Leif","Ronan","Samir","Tariq","Blaine","Cormac","Piers","Reed","Flynn"
-  ];
+    "Abel","Abraham","Absalom","Adan","Adrian","Aidan","Alban","Albert","Aldous",
+    "Alec","Alistair","Ambrose","Amos","Anselm","Archibald","Arden","Arlo","Arnold",
+    "Arthur","Aubrey","Augustus","Barnaby","Bartholomew","Basil","Beau","Benedict",
+    "Benjamin","Blaise","Bram","Bramwell","Broderick","Byron","Callum","Calvin",
+    "Casper","Cecil","Cedric","Cephas","Christian","Clarence","Clement","Clifford",
+    "Cormac","Cornelius","Crispin","Cyril","Damian","Daniel","Dashiell","David",
+    "Declan","Denis","Desmond","Dorian","Douglas","Duncan","Edmund","Edward",
+    "Edwin","Elias","Elijah","Emerson","Emmet","Ernest","Ethan","Eugene",
+    "Evander","Everard","Ezekiel","Ezra","Fabian","Fergus","Ferdinand","Francis",
+    "Franklin","Frederick","Gabriel","Gareth","Garrett","Geoffrey","George",
+    "Gerald","Gerard","Gideon","Gilbert","Giles","Godfrey","Hadley","Hamilton",
+    "Harvey","Hector","Henry","Herbert","Herman","Hilary","Horace","Horatio",
+    "Hubert","Hugh","Humphrey","Ignatius","Isaac","Isaiah","Isidore","Jacob",
+    "Jasper","Jedidiah","Jerome","Jesse","Jonas","Jonathan","Joseph","Joshua",
+    "Julian","Julius","Lambert","Laurence","Leander","Leonard","Leopold","Levi",
+    "Lewis","Lionel","Llewelyn","Lorcan","Lorenzo","Lucian","Luther","Magnus",
+    "Malachi","Marcus","Martin","Matthias","Maurice","Maximilian","Miles","Morgan",
+    "Moses","Murray","Nathaniel","Nicholas","Niall","Obadiah","Oliver","Orlando",
+    "Osbert","Oscar","Oswald","Otto","Owen","Pascal","Patrick","Peregrine",
+    "Peter","Philip","Phineas","Raphael","Raymond","Reginald","Reuben","Richard",
+    "Robert","Roderick","Roland","Rolf","Ronan","Rory","Roscoe","Rufus",
+    "Rupert","Sebastian","Silas","Solomon","Stanislaus","Stephen","Sylvester",
+    "Thaddeus","Theodore","Theophilus","Thomas","Timon","Timothy","Tobias","Tristan",
+    "Ulric","Valentine","Victor","Vincent","Virgil","Walter","Warren","Wilfred",
+    "William","Willis","Wyndham","Zachary","Zebediah","Zeno",
+    // Irish & Scottish additions
+    "Aodh","Cailean","Callum","Coinneach","Diarmuid","Donncha","Eoin","Fearghus",
+    "Fionnbarra","Iain","Lachlan","Padraig","Seamus","Seoirse","Tadhg",
+    "Alasdair","Angus","Brennan","Ciarán","Colm","Donal","Eoghan","Fionn",
+    "Lorcan","Odhran","Oisín","Pádraig","Ruairí","Séan","Tiernan"
 
   function setGender(g) {
     selectedGender = g;
